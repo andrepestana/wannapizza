@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <main id="barba-wrapper">
+      <div class="barba-container" data-prev="services.html" data-next="news.html">
+        <script>
+        var script_url = "https://script.google.com/macros/s/AKfycbwJgfDylIsnBnMThXXfqyEurEQA14LEJEoyAKS3TS5nPuMTLbU/exec";
+        // Make an AJAX call to Google Script
+        function insertValue() {
+          var name=	$("#name").val();
+          var email= $("#email").val();
+          var message= $("#message").val();
+          var url = script_url+"?callback=ctrlq&name="+name+"&email="+email+"&message="+message+"&action=insert";
+          var request = jQuery.ajax({
+            crossDomain: true,
+            url: url ,
+            method: "GET",
+            dataType: "jsonp"
+          });
+        }
+        var submitFunc = function mySubmitFunction(e) {
+          e.preventDefault();
+          someBug();
+          return false;
+        }
+        </script>
+        <div class="container text-center">
+          <div class="navbar-space">&nbsp;</div>
+          <h1>Contact</h1>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="well">
+                <form id="contactForm" onsubmit="this.preventDefault;insertValue();$('#contactForm').hide();$('#successMessage').removeClass('d-none'); return false;">
+                  <div class="text-left">
+                    <div class="form-group">
+                      <label for="name">Name</label>
+                      <input type="text" required class="form-control" name="name" id="name">
+                    </div>
+                    <div class="form-group">
+                      <label for="email">Email</label>
+                      <input type="email" required class="form-control" name="email" id="email">
+                    </div>
+                    <div class="form-group">
+                      <label for="message">Message</label>
+                      <textarea class="form-control" required name="message" id="message"></textarea>
+                    </div>
+                    <input type="submit" class="btn btn-primary" id="b1" value="Send"></input>
+                  </div>
+                </form>
+                <h3 class="d-none" id="successMessage">Message sent!</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

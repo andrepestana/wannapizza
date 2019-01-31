@@ -1,0 +1,31 @@
+body {
+    padding-top: 100px;
+}
+.well .fa {
+  font-size: 60px;
+}
+.well {
+  background-color: #333;
+  margin: 15px;
+  padding:15px;
+}
+.thumbnail {
+  width: 100%;
+}
+#news img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
+}
+footer {
+   position:fixed;
+   bottom:0;
+   width:100%;
+   height: 40px;   /* Height of the footer */
+   background:#00BC8C;
+   vertical-align: bottom;
+}
+footer p {
+    margin-top: 14px;
+}

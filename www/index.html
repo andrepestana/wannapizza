@@ -1,0 +1,101 @@
+  <!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8" />
+      <meta name="format-detection" content="telephone=no" />
+      <meta name="msapplication-tap-highlight" content="no" />
+      <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+      <!-- <link rel="stylesheet" type="text/css" href="css/all.min.css" /> -->
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+      <link rel="stylesheet" type="text/css" href="css/fontawesome.min.css" />
+      <link href="css/simple-sidebar.css" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href="css/index.css" />
+      <title>Acme Mobile</title>
+  </head>
+  <body>
+    <div id="wrapper">
+      <!-- Sidebar -->
+      <div id="sidebar-wrapper">
+          <ul class="sidebar-nav">
+              <li class="sidebar-brand">
+                  <a href="#">
+                      <i class="fas fa-pizza-slice"></i> Pizza!
+                  </a>
+              </li>
+              <li class="nav-item active">
+                <a data-menu-name="index" data-direction="left" class="nav-link prev" href="/index.html"><i class="fa fa-home"></i> Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a data-menu-name="about" data-direction="right" class="nav-link next" href="/about.html"><i class="fa fa-info-circle"></i> About</a>
+              </li>
+              <li class="nav-item">
+                <a data-menu-name="services" data-direction="right" class="nav-link" href="/services.html"><i class="fa fa-user"></i> Services</a>
+              </li>
+              <li class="nav-item">
+                <a data-menu-name="contact" data-direction="right" class="nav-link" href="/contact.html"><i class="fa fa-envelope"></i> Contact</a>
+              </li>
+              <li class="nav-item">
+                <a data-menu-name="news" data-direction="right" class="nav-link" href="/news.html"><i class="fa fa-newspaper"></i> News</a>
+              </li>
+          </ul>
+      </div>
+      <!-- /#sidebar-wrapper -->
+      <div id="page-content-wrapper">
+        <div style="text-align: right; position: fixed; right:0; z-index:1001;"><a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Toggle Menu</a></div>
+        <main id="barba-wrapper" >
+          <div class="barba-container">
+            <div id="container" class="container text-center">
+              <div class="navbar-space">&nbsp;</div>
+              <h1>WannaPizza</h1>
+              <p class="lead">Order your pizza now!</p>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="well" style="text-align: center">
+                    <i class="fas fa-pizza-slice" style="font-size: 20vh;"></i>
+                    <form id="contactForm" onsubmit="this.preventDefault;insertValue();$('#contactForm').hide();$('#successMessage').removeClass('d-none'); return false;">
+                      <div class="text-left">
+                        <div class="form-group">
+                          <label for="name">Name</label>
+                          <input type="text" required class="form-control" name="name" id="name">
+                        </div>
+                        <div class="form-group">
+                          <label for="email">Email</label>
+                          <input type="email" required class="form-control" name="email" id="email">
+                        </div>
+                        <div class="form-group">
+                          <label for="message">Message</label>
+                          <textarea class="form-control" required name="message" id="message"></textarea>
+                        </div>
+                        <input type="submit" class="btn btn-primary" id="b1" value="Send"></input>
+                      </div>
+                    </form>
+                    <h3 class="d-none" id="successMessage">Message sent!</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <script type="text/javascript" src="cordova.js"></script>
+      <script type="text/javascript" src="js/jquery.1.9.1.min.js"></script>
+      <script type="text/javascript" src="js/bootstrap.min.js"></script>
+      <script type="text/javascript" src="js/barba.js"></script>
+      <script type="text/javascript" src="js/slidePages.js"></script>
+      <script type="text/javascript" src="js/TweenMax.js"></script>
+      <script type="text/javascript" src="js/rss-parser.min.js"></script>
+      <script>
+      $("#menu-toggle").click(function(e) {
+          e.preventDefault();
+          $("#wrapper").toggleClass("toggled");
+      });
+      $(".nav-link").click(function(e) {
+          $("#wrapper").toggleClass("toggled");
+      });
+
+      </script>
+      <script type="text/javascript" src="js/index.js"></script>
+    </div>
+  </body>
+</html>
