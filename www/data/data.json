@@ -4,27 +4,54 @@
       "name": "Mozzarela",
       "description": "Traditional dough, mozzarela cheese, tomato sauce and oregano.",
       "sizes": [
-        "large": 12.99,
-        "medium": 9.99,
-        "small": 6.99
+        {
+          "size": "large",
+          "price": 12.99
+        },
+        {
+          "size": "medium",
+          "price": 9.99
+        },
+        {
+          "size": "small",
+          "price": 6.99
+        }
       ]
     },
     {
       "name": "Pepperoni",
       "description": "Traditional dough, cheese, pepperoni, tomato sauce and oregano.",
       "sizes": [
-        "large": 13.99,
-        "medium": 10.99,
-        "small": 7.99
+        {
+          "size": "large",
+          "price": 13.99
+        },
+        {
+          "size": "medium",
+          "price": 10.99
+        },
+        {
+          "size": "small",
+          "price": 7.99
+        }
       ]
     },
     {
       "name": "Hawaiian",
       "description": "Traditional dough, cheese, smoked ham, tomato sauce and pineapple.",
       "sizes": [
-        "large": 14.99,
-        "medium": 11.99,
-        "small": 8.99
+        {
+          "size": "large",
+          "price": 14.99
+        },
+        {
+          "size": "medium",
+          "price": 11.99
+        },
+        {
+          "size": "small",
+          "price": 8.99
+        }
       ]
     }
   ],
@@ -58,6 +85,6 @@
       "name": "Bacon",
       "price": 2.00
     }
-  ]
+  ],
   "deliveryFee": 3.00
 }
