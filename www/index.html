@@ -52,25 +52,33 @@
               <div class="row">
                 <div class="col-md-12">
                   <div class="well" style="text-align: center">
-                    <i class="fas fa-pizza-slice" style="font-size: 20vh;"></i>
+                    <p><i class="fas fa-pizza-slice" style="font-size: 12vh;"></i></p>
                     <form id="contactForm" onsubmit="this.preventDefault;insertValue();$('#contactForm').hide();$('#successMessage').removeClass('d-none'); return false;">
                       <div class="text-left">
-                        <div class="form-group">
-                          <label for="name">Name</label>
-                          <input type="text" required class="form-control" name="name" id="name">
+                        <div id="pizzas-form-group" class="form-group">
+                          <label for="name">Pizza:</label>
+                          <select id="pizza-dropdown">
+                          </select>
                         </div>
-                        <div class="form-group">
-                          <label for="email">Email</label>
-                          <input type="email" required class="form-control" name="email" id="email">
+                        <div id="pizza-sizes-form-group" class="form-group">
+                          <label for="name">Size:</label>
+                          <select id="pizza-size-dropdown">
+                          </select>
                         </div>
-                        <div class="form-group">
-                          <label for="message">Message</label>
-                          <textarea class="form-control" required name="message" id="message"></textarea>
+                        <div class="text-right">
+                          <input type="button" class="btn btn-primary" id="add-pizza-to-order" value="Add to Order"></input>
                         </div>
-                        <input type="submit" class="btn btn-primary" id="b1" value="Send"></input>
                       </div>
                     </form>
-                    <h3 class="d-none" id="successMessage">Message sent!</h3>
+
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="well" style="text-align: center; min-height:200px;">
+                  <h3>Order summary</h3>
+                  <div id="order-summary-div">
+
+                  </div>
                   </div>
                 </div>
               </div>
@@ -93,7 +101,6 @@
       $(".nav-link").click(function(e) {
           $("#wrapper").toggleClass("toggled");
       });
-
       </script>
       <script type="text/javascript" src="js/index.js"></script>
     </div>
