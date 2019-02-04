@@ -69,6 +69,9 @@ document.addEventListener("DOMContentLoaded", function() {
   };
 
   Barba.Dispatcher.on('newPageReady', function(currentStatus, oldStatus, container) {
+    populatePizzasDropdown();
+    addEventListenerToButtons();
+
     if($('#news').length) {
 
       // Note: some RSS feeds can't be loaded in the browser due to CORS security.

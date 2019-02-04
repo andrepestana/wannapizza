@@ -11,9 +11,9 @@
       <link rel="stylesheet" type="text/css" href="css/fontawesome.min.css" />
       <link href="css/simple-sidebar.css" rel="stylesheet">
       <link rel="stylesheet" type="text/css" href="css/index.css" />
-      <title>Acme Mobile</title>
+      <title>WannaPizza</title>
   </head>
-  <body>
+  <body ng-app="wannaPizzaApp">
     <div id="wrapper">
       <!-- Sidebar -->
       <div id="sidebar-wrapper">
@@ -47,38 +47,50 @@
           <div class="barba-container">
             <div id="container" class="container text-center">
               <div class="navbar-space">&nbsp;</div>
-              <h1>WannaPizza</h1>
-              <p class="lead">Order your pizza now!</p>
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="well" style="text-align: center">
-                    <p><i class="fas fa-pizza-slice" style="font-size: 12vh;"></i></p>
-                    <form id="contactForm" onsubmit="this.preventDefault;insertValue();$('#contactForm').hide();$('#successMessage').removeClass('d-none'); return false;">
-                      <div class="text-left">
-                        <div id="pizzas-form-group" class="form-group">
-                          <label for="name">Pizza:</label>
-                          <select id="pizza-dropdown">
-                          </select>
+              <div ng-controller="OrderController">
+                <h1>WannaPizza</h1>
+                <p class="lead">Order your pizza now!</p>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="well" style="text-align: center">
+                      <p><i class="fas fa-pizza-slice" style="font-size: 12vh;"></i></p>
+                      <form id="contactForm" onsubmit="this.preventDefault;insertValue();$('#contactForm').hide();$('#successMessage').removeClass('d-none'); return false;">
+                        <div class="text-left">
+                          <div id="pizzas-form-group" class="form-group">
+                            <label for="name">Pizza:</label>
+                            <select name="pizzas-dropdown"
+                                    ng-model="selectedPizza"
+                                    ng-options="pizza as pizza.name for pizza in pizzaData.pizzas"
+                                    ng-selected="selectedPizza">
+                            </select>
+                          </div>
+                          <div id="pizza-sizes-form-group" class="form-group" ng-show="selectedPizza">
+                            <label for="name">Size:</label>{{selectedPizza}}
+                            <select id="pizza-size-dropdown"
+                                    ng-model="selectedPizzaSize"
+                                    ng-options="size as size.desc for size in selectedPizza.sizes"
+                                    ng-selected="selectedPizzaSize">
+                            </select>
+                          </div>
+                          <div class="text-right">
+                            <input type="button"
+                                   class="btn btn-primary"
+                                   id="add-pizza-to-order"
+                                   value="Add to Order"
+                                   ng-click="addToOrder()"></input>
+                          </div>
                         </div>
-                        <div id="pizza-sizes-form-group" class="form-group">
-                          <label for="name">Size:</label>
-                          <select id="pizza-size-dropdown">
-                          </select>
-                        </div>
-                        <div class="text-right">
-                          <input type="button" class="btn btn-primary" id="add-pizza-to-order" value="Add to Order"></input>
-                        </div>
-                      </div>
-                    </form>
+                      </form>
 
+                    </div>
                   </div>
-                </div>
-                <div class="col-md-12">
-                  <div class="well" style="text-align: center; min-height:200px;">
-                  <h3>Order summary</h3>
-                  <div id="order-summary-div">
+                  <div class="col-md-12">
+                    <div class="well" style="text-align: center; min-height:200px;">
+                    <h3>Order summary</h3>
+                    <div id="order-summary-div">
 
-                  </div>
+                    </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -93,6 +105,9 @@
       <script type="text/javascript" src="js/slidePages.js"></script>
       <script type="text/javascript" src="js/TweenMax.js"></script>
       <script type="text/javascript" src="js/rss-parser.min.js"></script>
+      <script type="text/javascript" src="js/angular.min.js"></script>
+      <script type="text/javascript" src="js/OrderController.js"></script>
+
       <script>
       $("#menu-toggle").click(function(e) {
           e.preventDefault();

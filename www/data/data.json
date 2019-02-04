@@ -5,15 +5,18 @@
       "description": "Traditional dough, mozzarela cheese, tomato sauce and oregano.",
       "sizes": [
         {
-          "size": "large",
+          "id": 1,
+          "desc": "large",
           "price": 12.99
         },
         {
-          "size": "medium",
+          "id": 2,
+          "desc": "medium",
           "price": 9.99
         },
         {
-          "size": "small",
+          "id": 3,
+          "desc": "small",
           "price": 6.99
         }
       ]
@@ -23,15 +26,18 @@
       "description": "Traditional dough, cheese, pepperoni, tomato sauce and oregano.",
       "sizes": [
         {
-          "size": "large",
+          "id": 4,
+          "desc": "large",
           "price": 13.99
         },
         {
-          "size": "medium",
+          "id": 5,
+          "desc": "medium",
           "price": 10.99
         },
         {
-          "size": "small",
+          "id": 6,
+          "desc": "small",
           "price": 7.99
         }
       ]
@@ -41,15 +47,18 @@
       "description": "Traditional dough, cheese, smoked ham, tomato sauce and pineapple.",
       "sizes": [
         {
-          "size": "large",
+          "id": 7,
+          "desc": "large",
           "price": 14.99
         },
         {
-          "size": "medium",
+          "id": 8,
+          "desc": "medium",
           "price": 11.99
         },
         {
-          "size": "small",
+          "id": 9,
+          "desc": "small",
           "price": 8.99
         }
       ]
@@ -57,16 +66,19 @@
   ],
   "beverages": [
     {
+      "id": 1,
       "name": "Coke",
       "size": "1L",
       "price": 3.00
     },
     {
+      "id": 2,
       "name": "Pepsi",
       "size": "1L",
       "price": 3.00
     },
     {
+      "id": 3,
       "name": "Sprite",
       "size": "1L",
       "price": 3.00
@@ -74,14 +86,17 @@
   ],
   "extras": [
     {
+      "id": 1,
       "name": "Mozzarela",
       "price": 1.00
     },
     {
+      "id": 2,
       "name": "Tomato sauce",
       "price": 1.00
     },
     {
+      "id": 1,
       "name": "Bacon",
       "price": 2.00
     }
