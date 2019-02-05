@@ -1,4 +1,49 @@
-var module = angular.module("wannaPizzaApp", []);
+var module = angular.module("wannaPizzaApp",['ngRoute', 'ngAnimate', 'pascalprecht.translate']);
+
+module.config(function($routeProvider) {
+    $routeProvider
+    	.when('/', {
+    		templateUrl: 'order.html',
+            controller: 'OrderController'
+    	})
+    	.when('/about', {
+    		templateUrl: 'about.html',
+            controller: 'AboutController'
+    	})
+      .when('/services', {
+        templateUrl: 'services.html',
+            controller: 'ServicesController'
+      })
+    	.when('/contact', {
+    		templateUrl: 'contact.html',
+            controller: 'ContactController'
+    	})
+      .when('/news', {
+        templateUrl: 'news.html',
+            controller: 'NewsController'
+      });
+
+});
+
+module.config(['$translateProvider', function ($translateProvider) {
+  $translateProvider.useStaticFilesLoader({
+      prefix: '/translations/',
+      suffix: '.json'
+  });
+  $translateProvider.preferredLanguage('en');
+}]);
+
+module.controller("AboutController", function($scope) {
+});
+
+module.controller("ServicesController", function($scope) {
+});
+
+module.controller("ContactController", function($scope) {
+});
+
+module.controller("NewsController", function($scope) {
+});
 
 module.service('orderService', function($http) {
 
