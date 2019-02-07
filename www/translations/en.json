@@ -3,9 +3,9 @@
      "title": "WannaPizza",
      "home": "Home",
      "about": "About",
-     "services": "Services",
      "contact": "Contact",
-     "news": "News"
+     "locations": "Locations",
+     "myData": "My Data"
    },
    "order": {
      "order_your_pizza_now": "Order your pizza now!",
@@ -15,5 +15,32 @@
      "select_a_size": "Select a size",
      "summary": "Order summary",
      "add_to_order": "Add to Order"
+   },
+   "locations": {
+     "title": "Locations"
+   },
+   "about": {
+     "title": "About us"
+   },
+   "contact": {
+     "title": "Contat us",
+     "name": "Name",
+     "email": "Email",
+     "message": "Message",
+     "send": "Send",
+     "success_message": "Message was sent!"
+   },
+   "locations": {
+     "title": "Our locations"
+   },
+   "myData": {
+     "title": "My Data",
+     "name": "Name",
+     "address": "Address",
+     "phone1": "Phone 1",
+     "phone2": "Phone 2",
+     "email": "Email",
+     "save": "Save"
    }
+
 }

@@ -1,26 +1,27 @@
-<div class="navbar-space">&nbsp;</div>
-<h1>Contact</h1>
+<h1 class="mt-2">{{ 'contact.title' |translate}}</h1>
 <div class="row">
   <div class="col-md-12">
     <div class="well">
       <form id="contactForm" onsubmit="this.preventDefault;insertValue();$('#contactForm').hide();$('#successMessage').removeClass('d-none'); return false;">
         <div class="text-left">
           <div class="form-group">
-            <label for="name">Name</label>
+            <label for="name">{{ 'contact.name' |translate}}</label>
             <input type="text" required class="form-control" name="name" id="name">
           </div>
           <div class="form-group">
-            <label for="email">Email</label>
+            <label for="email">{{ 'contact.email' |translate}}</label>
             <input type="email" required class="form-control" name="email" id="email">
           </div>
           <div class="form-group">
-            <label for="message">Message</label>
+            <label for="message">{{ 'contact.message' |translate}}</label>
             <textarea class="form-control" required name="message" id="message"></textarea>
           </div>
-          <input type="submit" class="btn btn-primary" id="b1" value="Send"></input>
+          <div class="text-right">
+            <input type="submit" class="btn btn-primary" id="b1" value="{{ 'contact.send' |translate}}"></input>
+          </div>
         </div>
       </form>
-      <h3 class="d-none" id="successMessage">Message sent!</h3>
+      <h3 class="d-none" id="successMessage">{{ 'contact.success_message' |translate}}</h3>
     </div>
   </div>
 </div>

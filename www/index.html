@@ -20,42 +20,47 @@
           <ul class="sidebar-nav">
               <li class="sidebar-brand">
                   <a href="#">
-                      <h4 class="mt-4"><i class="fas fa-pizza-slice"></i> {{ 'app.title' |translate}}</h4>
+                      <h5 class="mt-1 nav-link"><i class="fas fa-pizza-slice"></i> {{ 'app.title' |translate}}</h5>
                   </a>
               </li>
               <li class="nav-item active">
                 <a class="nav-link prev" href="#!"><i class="fa fa-home"></i> {{ 'app.home' |translate}}</a>
               </li>
               <li class="nav-item">
+                <a class="nav-link" href="#!contact"><i class="fa fa-phone"></i> {{ 'app.contact' |translate}}</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#!locations"><i class="fas fa-map-marked-alt"></i> {{ 'app.locations' |translate}}</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#!mydata"><i class="fas fa-address-card"></i> {{ 'app.myData' |translate}}</a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link next" href="#!about"><i class="fa fa-info-circle"></i> {{ 'app.about' |translate}}</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#!services"><i class="fa fa-user"></i> {{ 'app.services' |translate}}</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#!contact"><i class="fa fa-envelope"></i> {{ 'app.contact' |translate}}</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#!news"><i class="fa fa-newspaper"></i> {{ 'app.news' |translate}}</a>
               </li>
           </ul>
       </div>
       <!-- /#sidebar-wrapper -->
       <div id="page-content-wrapper">
-        <div class="text-right"
-             style="position: fixed; right:0; z-index:1001;">
-          <a href="#menu-toggle"
-             class="btn btn-secondary"
-             id="menu-toggle">
-             Toggle Menu
+        <div id="toggle-menu" class="text-right">
+             <a href="#menu-toggle"
+                id="menu-toggle">
+                <div class="pizza">
+                  <div class="crust"></div>
+                  <div class="cheese"></div>
+                  <div class="pepperoni pep1"></div>
+                  <div class="pepperoni pep2"></div>
+                  <div class="pepperoni pep3"></div>
+                  <div class="pepperoni pep4"></div>
+                  <div class="pepperoni pep5"></div>
+                  <div class="pepperoni pep6"></div>
+                </div>
            </a>
         </div>
         <main id="main" >
           <div class="page text-center" ng-view>
-
-        </div>
-
-      </main>
+          </div>
+        </main>
       <script type="text/javascript" src="cordova.js"></script>
       <script type="text/javascript" src="js/jquery.1.9.1.min.js"></script>
       <script type="text/javascript" src="js/bootstrap.min.js"></script>
@@ -72,9 +77,12 @@
       $("#menu-toggle").click(function(e) {
           e.preventDefault();
           $("#wrapper").toggleClass("toggled");
+
+          $("#toggle-menu").toggleClass("toggled");
       });
       $(".nav-link").click(function(e) {
           $("#wrapper").toggleClass("toggled");
+          $("#toggle-menu").toggleClass("toggled");
       });
       </script>
       <script type="text/javascript" src="js/index.js"></script>

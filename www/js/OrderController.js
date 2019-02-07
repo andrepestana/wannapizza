@@ -10,18 +10,18 @@ module.config(function($routeProvider) {
     		templateUrl: 'about.html',
             controller: 'AboutController'
     	})
-      .when('/services', {
-        templateUrl: 'services.html',
-            controller: 'ServicesController'
+      .when('/locations', {
+        templateUrl: 'locations.html',
+            controller: 'LocationsController'
       })
     	.when('/contact', {
     		templateUrl: 'contact.html',
             controller: 'ContactController'
     	})
-      .when('/news', {
-        templateUrl: 'news.html',
-            controller: 'NewsController'
-      });
+      .when('/mydata', {
+    		templateUrl: 'mydata.html',
+            controller: 'MyDataController'
+    	});
 
 });
 
@@ -36,13 +36,13 @@ module.config(['$translateProvider', function ($translateProvider) {
 module.controller("AboutController", function($scope) {
 });
 
-module.controller("ServicesController", function($scope) {
+module.controller("LocationsController", function($scope) {
 });
 
 module.controller("ContactController", function($scope) {
 });
 
-module.controller("NewsController", function($scope) {
+module.controller("MyDataController", function($scope) {
 });
 
 module.service('orderService', function($http) {
