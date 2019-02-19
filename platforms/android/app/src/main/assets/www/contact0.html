@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/fontawesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <title>Acme Mobile</title>
+
+    <script>
+    var script_url = "https://script.google.com/macros/s/AKfycbwJgfDylIsnBnMThXXfqyEurEQA14LEJEoyAKS3TS5nPuMTLbU/exec";
+    // Make an AJAX call to Google Script
+    function insertValue() {
+      var name=	$("#name").val();
+    	var email= $("#email").val();
+      var message= $("#message").val();
+      var url = script_url+"?callback=ctrlq&name="+name+"&email="+email+"&message="+message+"&action=insert";
+      var request = jQuery.ajax({
+        crossDomain: true,
+        url: url ,
+        method: "GET",
+        dataType: "jsonp"
+        });
+    }
+    var submitFunc = function mySubmitFunction(e) {
+      e.preventDefault();
+      someBug();
+      return false;
+    }
+    </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="#">Acme</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html"><i class="fa fa-home"></i> Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html"><i class="fa fa-info-circle"></i> About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="services.html"><i class="fa fa-user"></i> Services</a>
+          </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="contact.html"><i class="fa fa-envelope"></i> Contact <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="news.html"><i class="fa fa-newspaper"></i> News</a>
+        </li>
+      </ul>
+    </div>
+    </nav>
+    <div class="container text-center">
+      <h1>Contact</h1>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="well">
+            <form id="contactForm" onsubmit="this.preventDefault;insertValue();$('#contactForm').hide();$('#successMessage').removeClass('d-none'); return false;">
+              <div class="text-left">
+                <div class="form-group">
+                  <label for="name">Name</label>
+                  <input type="text" required class="form-control" name="name" id="name">
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" required class="form-control" name="email" id="email">
+                </div>
+                <div class="form-group">
+                  <label for="message">Message</label>
+                  <textarea class="form-control" required name="message" id="message"></textarea>
+                </div>
+                <input type="submit" class="btn btn-primary" id="b1" value="Send"></input>
+              </div>
+            </form>
+            <h3 class="d-none" id="successMessage">Message sent!</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer><p class="text-center">Copyright &copy; 2019, ACME INC</p></footer>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+
+</body>
+</html>

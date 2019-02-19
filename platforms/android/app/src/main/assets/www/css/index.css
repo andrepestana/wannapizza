@@ -1,13 +1,19 @@
 body {
-    padding-top: 100px;
+    /* padding-top: 100px; */
+    background: rgba(255,250,138);
+    color: rgba(225,35,1);
+}
+.navbar-space {
+  height: 50px;
 }
 .well .fa {
   font-size: 60px;
 }
 .well {
-  background-color: #333;
+  background-color: rgba(225,216,0);
   margin: 15px;
-  padding:15px;
+  padding:5px;
+  text-align: justify;
 }
 .thumbnail {
   width: 100%;
@@ -28,4 +34,151 @@ footer {
 }
 footer p {
     margin-top: 14px;
+}
+.transition-fade {
+
+    transition: 0.3s ;
+    transform: translateX(0);
+}
+html.is-animating .transition-fade{
+transition: 0;
+ opacity: 0;
+ transform: translateX(-1%);
+}
+
+.order-item {
+  background: rgba(225,35,1);
+  color: #fffa8a;
+  margin: -3px;
+  margin-bottom: 4px;
+}
+
+.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col, .col-auto, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-sm-auto, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-md-auto, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-lg-auto, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl, .col-xl-auto {
+  padding: 5px;
+}
+.page        {
+    bottom:0;
+    position:absolute;
+    top:0;
+    width:100%;
+}
+
+
+.page.ng-leave        {
+  -webkit-animation:slideOutLeft 0.5s both ease-in;
+	-moz-animation:slideOutLeft 0.5s both ease-in;
+	animation:slideOutLeft 0.5s both ease-in;
+}
+.page.ng-enter 		{
+  -webkit-animation:slideInRight 0.5s both ease-in;
+	-moz-animation:slideInRight 0.5s both ease-in;
+	animation:slideInRight 0.5s both ease-in;
+}
+
+/* ANIMATIONS
+============================================================================= */
+
+/* leaving animations ----------------------------------------- */
+/* rotate and fall */
+@keyframes rotateFall {
+    0%      { transform: rotateZ(0deg); }
+    20%     { transform: rotateZ(10deg); animation-timing-function: ease-out; }
+    40%     { transform: rotateZ(17deg); }
+    60%     { transform: rotateZ(16deg); }
+    100%    { transform: translateY(100%) rotateZ(17deg); }
+}
+
+/* slide in from the bottom */
+@keyframes slideOutLeft {
+    to      { transform: translateX(-100%); }
+}
+
+/* rotate out newspaper */
+@keyframes rotateOutNewspaper {
+    to      { transform: translateZ(-3000px) rotateZ(360deg); opacity: 0; }
+}
+
+/* entering animations --------------------------------------- */
+/* scale up */
+@keyframes scaleUp {
+    from    { opacity: 0.3; -webkit-transform: scale(0.8); }
+}
+
+/* slide in from the right */
+@keyframes slideInRight {
+    from    { transform:translateX(100%); }
+    to      { transform: translateX(0); }
+}
+
+/* slide in from the bottom */
+@keyframes slideInUp {
+    from    { transform:translateY(100%); }
+    to      { transform: translateY(0); }
+}
+
+.float {
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#0C9;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+  z-index: 999999999;
+}
+
+.float2 {
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:120px;
+	background-color:#0C9;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+  z-index: 999999999;
+}
+
+.float3 {
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:200px;
+	background-color:#0C9;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+  z-index: 999999999;
+}
+
+.my-float{
+	margin-top:22px;;
+}
+
+
+.swipe, .swiper-container, .swiper-wrapper, .swiper-slide {
+  background: transparent;
+}
+.swiper-pagination-progressbar {
+  background:#007aff;
+  position:absolute;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  -webkit-transform:scale(0);
+  -ms-transform:scale(0);
+  transform-origin:left top;
+  height: 40px;
+}
+
+.swiper-container-horizontal>.swiper-pagination {
+  top: 0;
 }
