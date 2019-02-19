@@ -21,4 +21,4 @@
   - User rating
   - Create fidelity feature
     - every x number of pizzas, buy one
-  -Create a hash or any way to keep track of the user (phone number?)
+  - Create a hash or any way to keep track of the user (phone number?)
