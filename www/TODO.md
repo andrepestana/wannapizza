@@ -20,5 +20,5 @@
   - Create order history page
   - User rating
   - Create fidelity feature
-    - every x number of pizzas, buy one
+    - every x number of pizzas, win one
   - Create a hash or any way to keep track of the user (phone number?)
