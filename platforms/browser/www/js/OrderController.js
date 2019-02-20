@@ -67,6 +67,20 @@ module.controller("ContactController", function($scope) {
 module.controller("MyDataController", function($scope) {
 });
 
+module.controller("SwipeController", function($scope) {
+  $scope.renderBullet = function (index, className) {
+    switch (index) {
+      case 0:
+        return '<span class="' + className + '">Order</span>';
+      case 1:
+        return '<span class="' + className + '">My Data</span>';
+      case 2:
+        return '<span class="' + className + '">Contact</span>';
+    }
+    return "";
+};
+
+});
 module.service('orderService', function($http) {
 
   return {

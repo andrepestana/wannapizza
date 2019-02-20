@@ -41,7 +41,7 @@
           </ul>
       </div>
       <div id="page-content-wrapper">
-        <div id="toggle-menu" class="text-right">
+        <!-- <div id="toggle-menu" class="text-right">
              <a href="#menu-toggle"
                 id="menu-toggle">
                 <div class="pizza">
@@ -55,7 +55,7 @@
                   <div class="pepperoni pep6"></div>
                 </div>
            </a>
-        </div>
+        </div> -->
         <main id="main" >
           <div class="page text-center" ng-view>
           </div>
@@ -71,21 +71,10 @@
 
     <script type="text/javascript" src="js/angular-route.min.js"></script>
     <script type="text/javascript" src="js/angular-animate.min.js"></script>
-    <script type="text/javascript" src="js/angular-ui-swiper.min.js"></script>
+    <script type="text/javascript" src="js/angular-ui-swiper.js"></script>
     <script type="text/javascript" src="js/OrderController.js"></script>
 
-    <script>
-    $("#menu-toggle").click(function(e) {
-      e.preventDefault();
-      $("#wrapper").toggleClass("toggled");
-
-      $("#toggle-menu").toggleClass("toggled");
-    });
-    $(".nav-link").click(function(e) {
-      $("#wrapper").toggleClass("toggled");
-      $("#toggle-menu").toggleClass("toggled");
-    });
-    </script>
+    
     <script type="text/javascript" src="js/index.js"></script>
   </body>
 </html>
