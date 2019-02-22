@@ -1,47 +1,40 @@
 <div ng-controller="PizzaSelectionController" style="width: 100%; background: rgba(255,250,138);">
   <h1>Select your pizzas</h1>
-  <section class="swipe">
+  <section class="swipe" style="height: 100%">
    <swiper>
      <slides>
-       <slide>
-         <div style="height: 500px;
-                     width: 500px;
-                     background-repeat: no-repeat;
-                     background-size: contain;
-                     background-image: url(https://upload.wikimedia.org/wikipedia/commons/b/ba/New_York-Style_Pizza.png)">Mozzarela</div>
-       </slide>
-       <slide>
-         <div style="height: 500px;
-                     width: 500px;
-                     background-repeat: no-repeat;
-                     background-size: contain;
-                     background-image: url(https://www.cicis.com/media/1138/pizza_trad_pepperoni.png)">Pepperoni</div>
-       </slide>
-       <slide>
-         <br/><br/><br/><br/>Pizza 3<br/><br/><br/><br/>
-       </slide>
-       <slide>
-         <br/><br/><br/><br/>Pizza 4<br/><br/><br/><br/>
-       </slide>
-       <slide>
-         <br/><br/><br/><br/>Pizza 5<br/><br/><br/><br/>
-       </slide>
-       <slide>
-         <br/><br/><br/><br/>Pizza 6<br/><br/><br/><br/>
-       </slide>
-       <slide>
-         <br/><br/><br/><br/>Pizza 7<br/><br/><br/><br/>
+       <slide ng-repeat="pizza in pizzaData.pizzas">
+         <div class="well rounded text-center" style="width:100%">
+           <md-icon md-svg-src="img/pizza.svg"
+                    style="width: 100px;
+                           height: 100px;
+                           color: rgba(225,35,1);">
+           </md-icon>
+           <h3>
+             {{pizza.name}}
+           </h3>
+           <p>{{pizza.description}}
+           <ul class="p-0 flexbox">
+             <li class="d-inline"
+                 ng-repeat="size in pizza.sizes">
+               <a class="btn btn-primary">
+                 <div>{{size.desc}}</div>
+                 <div>{{size.price}}</div>
+               </a>
+             </li>
+           </ul>
+         </div>
        </slide>
      </slides>
    </swiper>
   </section>
 </div>
-<a href="#" class="float">
-  <i class="fa fa-plus my-float"></i>
+<a href="#" class="float3">
+  <i class="fas fa-arrow-left my-float"></i>
 </a>
 <a href="#" class="float2">
   <i class="fa fa-plus my-float"></i>
 </a>
-<a href="#" class="float3">
+<a href="#" class="float">
   <i class="fa fa-plus my-float"></i>
 </a>

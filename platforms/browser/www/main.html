@@ -8,25 +8,39 @@
                 justify-content: space-between;
                 align-items: center;">
       <h1 class="text-left px-3"><i class="fas fa-pizza-slice"></i> {{ 'app.title' |translate}}</h1>
-         <span id="ellipsis-menu" class="text-right px-4">
-            <a href="#menu-toggle"
-               id="menu-toggle">
-               <i class="fas fa-ellipsis-v">
-               </i>
-            </a>
-         </span>
-         <script>
-         $("#menu-toggle").click(function(e) {
-           e.preventDefault();
-           $("#wrapper").toggleClass("toggled");
+      <md-menu md-position-mode="target-right target">
+        <md-button aria-label="Open phone interactions menu" class="md-icon-button" ng-click="openMenu($mdMenu, $event)">
+          <md-icon md-menu-origin="" md-font-icon="fas fa-ellipsis-v"></md-icon>
+        </md-button>
+        <md-menu-content width="4">
+          <md-menu-item>
+            <md-button ng-click="goToSlide(0)">
+              <md-icon md-font-icon="fa fa-shopping-cart" md-menu-align-target=""></md-icon>
+              {{ 'app.order' |translate}}
+            </md-button>
+          </md-menu-item>
+          <md-menu-item>
+            <md-button ng-click="goToSlide(1)">
+              <md-icon md-font-icon="fas fa-address-card" md-menu-align-target=""></md-icon>
+              {{ 'app.my_data' |translate}}
+            </md-button>
+          </md-menu-item>
+          <md-menu-item>
+            <md-button ng-click="goToSlide(2)">
+              <md-icon md-font-icon="fa fa-phone" md-menu-align-target=""></md-icon>
+              {{ 'app.contact' |translate}}
+            </md-button>
+          </md-menu-item>
+          <md-menu-divider></md-menu-divider>
+          <md-menu-item>
+            <md-button ng-click="aboutMsg()">
+              <md-icon md-font-icon="fa fa-info-circle" md-menu-align-target=""></md-icon>
+              {{ 'app.about' |translate}}
+            </md-button>
+          </md-menu-item>
+        </md-menu-content>
+      </md-menu>
 
-           $("#ellipsis-menu").toggleClass("toggled");
-         });
-         $(".nav-link").click(function(e) {
-           $("#wrapper").toggleClass("toggled");
-           $("#ellipsis-menu").toggleClass("toggled");
-         });
-         </script>
     </div>
     <pagination></pagination>
     <slides>

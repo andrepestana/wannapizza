@@ -14,7 +14,9 @@ angular.element(document).ready(function () {
 var module = angular.module("wannaPizzaApp",['ngRoute',
                                              'ngAnimate',
                                              'pascalprecht.translate',
-                                             'ui.swiper']);
+                                             'ui.swiper',
+                                             'ngMaterial',
+                                             'ngMessages']);
 
 module.config(function($routeProvider) {
     $routeProvider
@@ -49,7 +51,33 @@ module.config(['$translateProvider', function ($translateProvider) {
   $translateProvider.preferredLanguage('en');
 }]);
 
-module.controller("MainController", function($scope) {
+module.controller("MainController", function($scope, $mdDialog) {
+
+  var originatorEv;
+
+  $scope.openMenu = function($mdMenu, ev) {
+    originatorEv = ev;
+    $mdMenu.open(ev);
+  };
+
+  $scope.aboutMsg = function() {
+    $mdDialog.show(
+      $mdDialog.alert()
+        .targetEvent(originatorEv)
+        .clickOutsideToClose(true)
+        .parent('body')
+        .title('About')
+        .textContent('WannaPizza 2019 - All rights reserved')
+        .ok('Close')
+    );
+
+    originatorEv = null;
+  };
+
+  $scope.goToSlide = function(index) {
+    var swiperInstance = document.querySelector('.swiper-container').swiper
+    swiperInstance.slideTo(index);
+  }
 });
 
 module.controller("PizzaSelectionController", function($scope) {
@@ -94,27 +122,27 @@ module.service('orderService', function($http) {
   }
 });
 
-module.controller("OrderController", function($scope, orderService) {
+module.controller("OrderController", function($rootScope, orderService) {
 
-  $scope.pizzaOrder = {
+  $rootScope.pizzaOrder = {
     items: []
   };
 
   orderService.getData()
   .then(function(data) {
-    $scope.pizzaData = data;
+    $rootScope.pizzaData = data;
   }, function(error){
     $('#container').html('<h3>Error while retrieving data: '+ error +'</h3>');
   });
 
-  $scope.addToOrder = function() {
-    console.log($scope.selectedPizza);
-    if($scope.selectedPizzaSize) {
-      $scope.pizzaOrder.items.push({
+  $rootScope.addToOrder = function() {
+    console.log($rootScope.selectedPizza);
+    if($rootScope.selectedPizzaSize) {
+      $rootScope.pizzaOrder.items.push({
         qty: 1,
-        desc: $scope.selectedPizza.name,
-        size: $scope.selectedPizzaSize.desc,
-        price: $scope.selectedPizzaSize.price
+        desc: $rootScope.selectedPizza.name,
+        size: $rootScope.selectedPizzaSize.desc,
+        price: $rootScope.selectedPizzaSize.price
       });
     }
   }

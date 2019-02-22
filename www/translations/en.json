@@ -1,14 +1,15 @@
 {
    "app": {
      "title": "WannaPizza",
-     "home": "Home",
+     "order": "Order",
      "about": "About",
      "contact": "Contact",
      "locations": "Locations",
-     "myData": "My Data"
+     "my_data": "My Data"
    },
    "order": {
-     "order_your_pizza_now": "Order your pizza now!",
+     "select_pizza": "Select Pizza",
+     "select_beverage": "Select Beverage",
      "pizza": "Pizza",
      "select_a_pizza": "Select a pizza",
      "size": "Size",
@@ -23,7 +24,7 @@
      "title": "About us"
    },
    "contact": {
-     "title": "Contat us",
+     "title": "Contact us",
      "name": "Name",
      "email": "Email",
      "message": "Message",
