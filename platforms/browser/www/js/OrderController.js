@@ -16,7 +16,14 @@ var module = angular.module("wannaPizzaApp",['ngRoute',
                                              'pascalprecht.translate',
                                              'ui.swiper',
                                              'ngMaterial',
-                                             'ngMessages']);
+                                             'ngMessages',
+                                             'LocalStorageModule']);
+
+
+module.config(function (localStorageServiceProvider) {
+ localStorageServiceProvider.setPrefix('wannaPizza')
+                            .setNotify(true, true);
+});
 
 module.config(function($routeProvider) {
     $routeProvider
@@ -80,7 +87,8 @@ module.controller("MainController", function($scope, $mdDialog) {
   }
 });
 
-module.controller("PizzaSelectionController", function($scope) {
+module.controller("PizzaSelectionController", function($scope, localStorageService) {
+  $scope.pizzaData = localStorageService.get('pizzaData');
 });
 
 module.controller("AboutController", function($scope) {
@@ -116,13 +124,16 @@ module.service('orderService', function($http) {
       var promise = $http.get("https://raw.githubusercontent.com/andrepestana/wannapizza/master/www/data/data.json")
       .then(function (response) {
         return response.data;
+        //throw 'aaa';
       });
       return promise;
     }
   }
 });
 
-module.controller("OrderController", function($rootScope, orderService) {
+module.controller("OrderController", function($rootScope,
+                                              orderService,
+                                              localStorageService) {
 
   $rootScope.pizzaOrder = {
     items: []
@@ -130,9 +141,10 @@ module.controller("OrderController", function($rootScope, orderService) {
 
   orderService.getData()
   .then(function(data) {
-    $rootScope.pizzaData = data;
+    //$rootScope.pizzaData = data;
+    localStorageService.set('pizzaData', data);
   }, function(error){
-    $('#container').html('<h3>Error while retrieving data: '+ error +'</h3>');
+    $('#main-swipe').html('<h3>Error while retrieving data: '+ error +'</h3>');
   });
 
   $rootScope.addToOrder = function() {

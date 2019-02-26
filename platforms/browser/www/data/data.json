@@ -4,21 +4,27 @@
       "id": 1,
       "name": "Mozzarela",
       "description": "Traditional dough, mozzarela cheese, tomato sauce and oregano.",
-      "sizes": [
+      "availableOptions": [
         {
-          "id": 1,
-          "desc": "large",
+          "size": {
+            "id": 1,
+            "desc": "Large"
+          },
           "price": 12.99
         },
         {
-          "id": 2,
-          "desc": "medium",
+          "size": {
+            "id": 2,
+            "desc": "Medium"
+          },
           "price": 9.99
         },
         {
-          "id": 3,
-          "desc": "small",
-          "price": 6.99
+          "size": {
+            "id": 3,
+            "desc": "Small"
+          },
+          "price": 7.99
         }
       ]
     },
@@ -26,45 +32,55 @@
       "id": 2,
       "name": "Pepperoni",
       "description": "Traditional dough, cheese, pepperoni, tomato sauce and oregano.",
-      "sizes": [
+      "availableOptions": [
         {
-          "id": 4,
-          "desc": "large",
+          "size": {
+            "id": 1,
+            "desc": "Large"
+          },
           "price": 13.99
         },
         {
-          "id": 5,
-          "desc": "medium",
+          "size": {
+            "id": 2,
+            "desc": "Medium"
+          },
           "price": 10.99
         },
         {
-          "id": 6,
-          "desc": "small",
-          "price": 7.99
+          "size": {
+            "id": 3,
+            "desc": "Small"
+          },
+          "price": 8.99
         }
-      ]
     },
     {
       "id": 3,
       "name": "Hawaiian",
       "description": "Traditional dough, cheese, smoked ham, tomato sauce and pineapple.",
-      "sizes": [
+      "availableOptions": [
         {
-          "id": 7,
-          "desc": "large",
+          "size": {
+            "id": 1,
+            "desc": "Large"
+          },
           "price": 14.99
         },
         {
-          "id": 8,
-          "desc": "medium",
-          "price": 11.99
+          "size": {
+            "id": 2,
+            "desc": "Medium"
+          },
+          "price": 12.99
         },
         {
-          "id": 9,
-          "desc": "small",
-          "price": 8.99
+          "size": {
+            "id": 3,
+            "desc": "Small"
+          },
+          "price": 10.99
         }
-      ]
     }
   ],
   "beverages": [

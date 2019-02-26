@@ -16,10 +16,10 @@
            <p>{{pizza.description}}
            <ul class="p-0 flexbox">
              <li class="d-inline"
-                 ng-repeat="size in pizza.sizes">
+                 ng-repeat="option in pizza.availableOptions">
                <a class="btn btn-primary">
-                 <div>{{size.desc}}</div>
-                 <div>{{size.price}}</div>
+                 <div>{{option.size.desc}}</div>
+                 <div>{{option.price}}</div>
                </a>
              </li>
            </ul>

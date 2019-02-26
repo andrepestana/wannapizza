@@ -8,8 +8,8 @@
      "my_data": "My Data"
    },
    "order": {
-     "select_pizza": "Select Pizza",
-     "select_beverage": "Select Beverage",
+     "select_pizza": "Pizzas",
+     "select_beverage": "Drinks",
      "pizza": "Pizza",
      "select_a_pizza": "Select a pizza",
      "size": "Size",
