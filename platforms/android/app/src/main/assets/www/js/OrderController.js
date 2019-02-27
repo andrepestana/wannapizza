@@ -89,6 +89,9 @@ module.controller("MainController", function($scope, $mdDialog) {
 
 module.controller("PizzaSelectionController", function($scope, localStorageService) {
   $scope.pizzaData = localStorageService.get('pizzaData');
+  console.log($scope.pizzaData);
+  console.log(typeof $scope.pizzaData);
+  console.log(JSON.parse($scope.pizzaData));
 });
 
 module.controller("AboutController", function($scope) {
@@ -125,6 +128,8 @@ module.service('orderService', function($http) {
       .then(function (response) {
         return response.data;
         //throw 'aaa';
+      }).catch(function(error) {
+        console.log('Error: '+error);
       });
       return promise;
     }
@@ -142,10 +147,15 @@ module.controller("OrderController", function($rootScope,
   orderService.getData()
   .then(function(data) {
     //$rootScope.pizzaData = data;
-    localStorageService.set('pizzaData', data);
+    //localStorageService.set('pizzaData', data);
+    console.log(typeof data);
+    var obj = JSON.parse(data);
+    console.log(obj);
   }, function(error){
     $('#main-swipe').html('<h3>Error while retrieving data: '+ error +'</h3>');
-  });
+  }).catch(function(error) {
+    console.log('Error: '+error);
+});
 
   $rootScope.addToOrder = function() {
     console.log($rootScope.selectedPizza);
